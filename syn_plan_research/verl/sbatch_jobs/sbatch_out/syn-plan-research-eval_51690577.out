@@ -1,0 +1,251 @@
+wandb: [wandb.login()] Using explicit session credentials for https://api.wandb.ai.
+wandb: Appending key for api.wandb.ai to your netrc file: /home/hzeng_umass_edu/.netrc
+wandb: W&B API key is configured. Use `wandb login --relogin` to force relogin
+
+🚀 Starting evaluation...
+📊 Data source filter: ALL
+📈 Pass@k: 1
+🤖 Model: hzeng/syn-plan-research-4B
+📁 Output: /gypsum/work1/zamani/hzeng/syn-plan-research/eval_outputs/syn_plan_research_4b_pass_at_1_all/eval.parquet
+
+/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+2026-02-04 19:45:02,226	INFO worker.py:2007 -- Started a local Ray instance.
+/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/ray/_private/worker.py:2046: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+[36m(pid=1397101)[0m /work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+[36m(pid=1397101)[0m   import pkg_resources
+[36m(pid=gcs_server)[0m [2026-02-04 19:45:28,959 E 1390573 1390573] (gcs_server) gcs_server.cc:303: Failed to establish connection to the event+metrics exporter agent. Events and metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14
+[33m(raylet)[0m [2026-02-04 19:45:31,636 E 1390815 1390815] (raylet) main.cc:1032: Failed to establish connection to the metrics exporter agent. Metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14
+[36m(pid=1390996)[0m [2026-02-04 19:45:33,491 E 1390996 1391285] core_worker_process.cc:842: Failed to establish connection to the metrics exporter agent. Metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14
+[2026-02-04 19:45:34,352 E 1390471 1390991] core_worker_process.cc:842: Failed to establish connection to the metrics exporter agent. Metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14
+[36m(CrawlWebpageToolServer pid=1397294)[0m [2026-02-04 19:45:53,606 E 1397294 1397399] core_worker_process.cc:842: Failed to establish connection to the metrics exporter agent. Metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14[32m [repeated 108x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)[0m
+[36m(CrawlWebpageToolServer pid=1397294)[0m INFO:     Started server process [1397294]
+[36m(CrawlWebpageToolServer pid=1397294)[0m INFO:     Waiting for application startup.
+[36m(CrawlWebpageToolServer pid=1397294)[0m INFO:     Application startup complete.
+[36m(CrawlWebpageToolServer pid=1397294)[0m INFO:     Uvicorn running on http://0.0.0.0:53953 (Press CTRL+C to quit)
+[36m(WebSearchToolServer pid=1397293)[0m [2026-02-04 19:45:53,588 E 1397293 1397349] core_worker_process.cc:842: Failed to establish connection to the metrics exporter agent. Metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14
+[36m(WebSearchToolServer pid=1397293)[0m INFO:     Started server process [1397293]
+[36m(WebSearchToolServer pid=1397293)[0m INFO:     Waiting for application startup.
+[36m(WebSearchToolServer pid=1397293)[0m INFO:     Application startup complete.
+[36m(WebSearchToolServer pid=1397293)[0m INFO:     Uvicorn running on http://0.0.0.0:34983 (Press CTRL+C to quit)
+[36m(main_task pid=1397101)[0m DeprecationWarning: `ray.state.available_resources_per_node` is a private attribute and access will be removed in a future Ray version.
+[36m(main_task pid=1397101)[0m WARNING:2026-02-04 19:47:58,508:Waiting for register center actor 1QVVa2_register_center to be ready. Elapsed time: 0 seconds out of 300 seconds.
+[36m(pid=1397697)[0m /work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+[36m(pid=1397697)[0m   import pkg_resources
+[36m(pid=1397697)[0m Using blocking ray.get inside async actor. This blocks the event loop. Please use `await` on object ref with asyncio.gather if you want to yield execution to the event loop instead.
+[36m(pid=1397849)[0m /work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+[36m(pid=1397849)[0m   import pkg_resources
+[36m(pid=1397849)[0m Using blocking ray.get inside async actor. This blocks the event loop. Please use `await` on object ref with asyncio.gather if you want to yield execution to the event loop instead.
+[36m(main_task pid=1397101)[0m ✅ output path:  /gypsum/work1/zamani/hzeng/syn-plan-research/eval_outputs/syn_plan_research_4b_pass_at_1_all/eval.parquet
+[36m(CrawlWebpageToolServer pid=1397294)[0m Cache initialized with 312303 entries and snippet cache with 0 entries.
+[36m(CrawlWebpageToolServer pid=1397294)[0m [FastAPI] startup
+[36m(WebSearchToolServer pid=1397293)[0m Cache initialized with 2803438 entries.
+[36m(main_task pid=1397101)[0m ✅ WebSearchToolServer started at 10.100.20.18:34983
+[36m(main_task pid=1397101)[0m ✅ CrawlWebpageToolServer started at 10.100.20.18:53953
+[36m(WebSearchToolServer pid=1397293)[0m [WebSearchToolServer] FastAPI startup.
+[36m(main_task pid=1397101)[0m colocated worker base class <class 'verl.single_controller.base.worker.Worker'>
+[36m(main_task pid=1397101)[0m bind role actor_rollout method chat_completion to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=1397101)[0m bind role actor_rollout method execute_method to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=1397101)[0m bind role actor_rollout method generate to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=1397101)[0m bind role actor_rollout method get_zeromq_address to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=1397101)[0m bind role actor_rollout method sleep to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=1397101)[0m bind role actor_rollout method wake_up to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=1397101)[0m ✅ 创建 actor in init_async_rollout_manager: ['1QVVa2WorkerDict_0:0', '1QVVa2_register_center', '1QVVa2WorkerDict_0:1', 'crawl_webpage_server', 'web_search_server']
+Error executing job with overrides: ['data.max_prompt_length=16384', 'data.max_response_length=4096', 'data.truncation=error', 'data.custom_cls.path=pkg://verl/utils/dataset/web_research_dataset', 'data.custom_cls.name=WebResearchRLDataset', 'actor_rollout_ref.model.path=hzeng/syn-plan-research-4B', 'actor_rollout_ref.model.use_remove_padding=True', 'actor_rollout_ref.actor.ulysses_sequence_parallel_size=2', 'actor_rollout_ref.actor.fsdp_config.param_offload=False', 'actor_rollout_ref.actor.fsdp_config.optimizer_offload=False', 'actor_rollout_ref.rollout.max_model_len=20000', 'actor_rollout_ref.rollout.log_prob_micro_batch_size_per_gpu=8', 'actor_rollout_ref.rollout.tensor_model_parallel_size=1', 'actor_rollout_ref.rollout.gpu_memory_utilization=0.9', 'actor_rollout_ref.rollout.n=1', 'actor_rollout_ref.eval_output_path=/gypsum/work1/zamani/hzeng/syn-plan-research/eval_outputs/syn_plan_research_4b_pass_at_1_all/eval.parquet', 'actor_rollout_ref.ref.log_prob_micro_batch_size_per_gpu=8', 'actor_rollout_ref.ref.fsdp_config.param_offload=True', 'actor_rollout_ref.rollout.max_assistant_turns=16', 'actor_rollout_ref.rollout.prompt_length=32768', 'actor_rollout_ref.rollout.response_length=8192', 'actor_rollout_ref.rollout.mode=async', 'actor_rollout_ref.rollout.multi_turn.completion_callback=tests.workers.rollout.my_test_web_research_completion_callback.Qwen3CustomToolCompletionCallback', 'actor_rollout_ref.rollout.val_kwargs.top_p=0.95', 'actor_rollout_ref.rollout.val_kwargs.top_k=20', 'actor_rollout_ref.rollout.val_kwargs.temperature=0.6', 'actor_rollout_ref.rollout.val_kwargs.do_sample=True', 'trainer.n_gpus_per_node=2', 'trainer.nnodes=1', 'tool_server.web_search_server.api_key=307dc01dc3e9ed75963943ed5104adbe5e93abf7', 'tool_server.web_search_server.cache_file=/gypsum/work1/zamani/hzeng/syn-plan-research/cache/serper_search_cache.jsonl', 'data.val_files=hzeng/syn-plan-research-data-eval', 'validation.pass_at_k=1', 'trainer.total_epochs=1']
+Traceback (most recent call last):
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/trainer/async_main_generation_and_eval.py", line 241, in main
+    run_generation(config)
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/trainer/async_main_generation_and_eval.py", line 253, in run_generation
+    ray.get(main_task.remote(config))
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/ray/_private/client_mode_hook.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/ray/_private/worker.py", line 2967, in get
+    values, debugger_breakpoint = worker.get_objects(
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/ray/_private/worker.py", line 1015, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ImportError): [36mray::main_task()[39m (pid=1397101, ip=10.100.20.18)
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/trainer/async_main_generation_and_eval.py", line 309, in main_task
+    async_rollout_manager = init_async_rollout_manager(config)
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/tests/workers/rollout/async_rollout_utils.py", line 57, in init_async_rollout_manager
+    actor_rollout_wg.init_model()
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/ray/base.py", line 51, in __call__
+    output = ray.get(output)
+ray.exceptions.RayTaskError(ImportError): [36mray::WorkerDict.actor_rollout_init_model()[39m (pid=1397697, ip=10.100.20.18, actor_id=46a3d2a6993fef9e3ff6310f01000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x78a8b1d42980>)
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/concurrent/futures/_base.py", line 458, in result
+    return self.__get_result()
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/ray/base.py", line 708, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/base/decorator.py", line 549, in inner
+    return func(*args, **kwargs)
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/fsdp_workers.py", line 561, in init_model
+    from verl.workers.actor import DataParallelPPOActor
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/actor/__init__.py", line 16, in <module>
+    from .dp_actor import DataParallelPPOActor
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/actor/dp_actor.py", line 42, in <module>
+    from flash_attn.bert_padding import index_first_axis, pad_input, rearrange, unpad_input
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/flash_attn/__init__.py", line 3, in <module>
+    from flash_attn.flash_attn_interface import (
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/flash_attn/flash_attn_interface.py", line 15, in <module>
+    import flash_attn_2_cuda as flash_attn_gpu
+ImportError: /work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/flash_attn_2_cuda.cpython-310-x86_64-linux-gnu.so: undefined symbol: _ZN3c105ErrorC2ENS_14SourceLocationENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+[36m(main_task pid=1397101)[0m Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_init_model()[39m (pid=1397849, ip=10.100.20.18, actor_id=8276ec7e6d865fdea4b1eeab01000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x74e493c3b580>)
+[36m(main_task pid=1397101)[0m   File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/concurrent/futures/_base.py", line 458, in result
+[36m(main_task pid=1397101)[0m     return self.__get_result()
+[36m(main_task pid=1397101)[0m   File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+[36m(main_task pid=1397101)[0m     raise self._exception
+[36m(main_task pid=1397101)[0m   File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/ray/base.py", line 708, in func
+[36m(main_task pid=1397101)[0m     return getattr(self.worker_dict[key], name)(*args, **kwargs)
+[36m(main_task pid=1397101)[0m   File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/base/decorator.py", line 549, in inner
+[36m(main_task pid=1397101)[0m     return func(*args, **kwargs)
+[36m(main_task pid=1397101)[0m   File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/fsdp_workers.py", line 561, in init_model
+[36m(main_task pid=1397101)[0m     from verl.workers.actor import DataParallelPPOActor
+[36m(main_task pid=1397101)[0m   File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/actor/__init__.py", line 16, in <module>
+[36m(main_task pid=1397101)[0m     from .dp_actor import DataParallelPPOActor
+[36m(main_task pid=1397101)[0m   File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/actor/dp_actor.py", line 42, in <module>
+[36m(main_task pid=1397101)[0m     from flash_attn.bert_padding import index_first_axis, pad_input, rearrange, unpad_input
+[36m(main_task pid=1397101)[0m   File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/flash_attn/__init__.py", line 3, in <module>
+[36m(main_task pid=1397101)[0m     from flash_attn.flash_attn_interface import (
+[36m(main_task pid=1397101)[0m   File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/flash_attn/flash_attn_interface.py", line 15, in <module>
+[36m(main_task pid=1397101)[0m     import flash_attn_2_cuda as flash_attn_gpu
+[36m(main_task pid=1397101)[0m ImportError: /work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/flash_attn_2_cuda.cpython-310-x86_64-linux-gnu.so: undefined symbol: _ZN3c105ErrorC2ENS_14SourceLocationENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+[36m(CrawlWebpageToolServer pid=1397294)[0m Task was destroyed but it is pending!
+[36m(CrawlWebpageToolServer pid=1397294)[0m task: <Task pending name='Task-3' coro=<CrawlWebpageToolServer._start_server() running at /work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/ray/util/tracing/tracing_helper.py:493> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+[36m(CrawlWebpageToolServer pid=1397294)[0m Task was destroyed but it is pending!
+[36m(CrawlWebpageToolServer pid=1397294)[0m task: <Task pending name='Task-4' coro=<LifespanOn.main() running at /work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/uvicorn/lifespan/on.py:86> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+[36m(CrawlWebpageToolServer pid=1397294)[0m ERROR:    Traceback (most recent call last):
+[36m(CrawlWebpageToolServer pid=1397294)[0m   File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/starlette/routing.py", line 701, in lifespan
+[36m(CrawlWebpageToolServer pid=1397294)[0m     await receive()
+[36m(CrawlWebpageToolServer pid=1397294)[0m GeneratorExit
+[36m(CrawlWebpageToolServer pid=1397294)[0m 
+
+🚀 Starting evaluation...
+📊 Data source filter: web_research_GAIA
+📈 Pass@k: 4
+🤖 Model: hzeng/syn-plan-research-4B
+📁 Output: /gypsum/work1/zamani/hzeng/syn-plan-research/eval_outputs/syn_plan_research_4b_pass_at_4_gaia/eval.parquet
+
+/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+2026-02-04 19:48:43,226	INFO worker.py:2007 -- Started a local Ray instance.
+/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/ray/_private/worker.py:2046: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+[36m(pid=1404579)[0m /work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+[36m(pid=1404579)[0m   import pkg_resources
+[36m(pid=gcs_server)[0m [2026-02-04 19:49:11,568 E 1398056 1398056] (gcs_server) gcs_server.cc:303: Failed to establish connection to the event+metrics exporter agent. Events and metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14
+[33m(raylet)[0m [2026-02-04 19:49:13,177 E 1398298 1398298] (raylet) main.cc:1032: Failed to establish connection to the metrics exporter agent. Metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14
+[36m(pid=1398407)[0m [2026-02-04 19:49:14,599 E 1398407 1398641] core_worker_process.cc:842: Failed to establish connection to the metrics exporter agent. Metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14
+[2026-02-04 19:49:15,230 E 1397975 1398405] core_worker_process.cc:842: Failed to establish connection to the metrics exporter agent. Metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14
+[36m(CrawlWebpageToolServer pid=1404775)[0m [2026-02-04 19:49:32,408 E 1404775 1404880] core_worker_process.cc:842: Failed to establish connection to the metrics exporter agent. Metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14[32m [repeated 108x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)[0m
+[36m(CrawlWebpageToolServer pid=1404775)[0m INFO:     Started server process [1404775]
+[36m(CrawlWebpageToolServer pid=1404775)[0m INFO:     Waiting for application startup.
+[36m(CrawlWebpageToolServer pid=1404775)[0m INFO:     Application startup complete.
+[36m(CrawlWebpageToolServer pid=1404775)[0m INFO:     Uvicorn running on http://0.0.0.0:35367 (Press CTRL+C to quit)
+[36m(WebSearchToolServer pid=1404774)[0m [2026-02-04 19:49:32,391 E 1404774 1404830] core_worker_process.cc:842: Failed to establish connection to the metrics exporter agent. Metrics will not be exported. Exporter agent status: RpcError: Running out of retries to initialize the metrics agent. rpc_code: 14
+[36m(main_task pid=1404579)[0m DeprecationWarning: `ray.state.available_resources_per_node` is a private attribute and access will be removed in a future Ray version.
+[36m(WebSearchToolServer pid=1404774)[0m INFO:     Started server process [1404774]
+[36m(WebSearchToolServer pid=1404774)[0m INFO:     Waiting for application startup.
+[36m(WebSearchToolServer pid=1404774)[0m INFO:     Application startup complete.
+[36m(WebSearchToolServer pid=1404774)[0m INFO:     Uvicorn running on http://0.0.0.0:47145 (Press CTRL+C to quit)
+[36m(main_task pid=1404579)[0m WARNING:2026-02-04 19:51:30,341:Waiting for register center actor WKzF2W_register_center to be ready. Elapsed time: 0 seconds out of 300 seconds.
+[36m(pid=1405178)[0m /work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+[36m(pid=1405178)[0m   import pkg_resources
+[36m(pid=1405178)[0m Using blocking ray.get inside async actor. This blocks the event loop. Please use `await` on object ref with asyncio.gather if you want to yield execution to the event loop instead.
+[36m(pid=1405329)[0m /work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+[36m(pid=1405329)[0m   import pkg_resources
+[36m(pid=1405329)[0m Using blocking ray.get inside async actor. This blocks the event loop. Please use `await` on object ref with asyncio.gather if you want to yield execution to the event loop instead.
+[36m(main_task pid=1404579)[0m ✅ output path:  /gypsum/work1/zamani/hzeng/syn-plan-research/eval_outputs/syn_plan_research_4b_pass_at_4_gaia/eval.parquet
+[36m(CrawlWebpageToolServer pid=1404775)[0m Cache initialized with 312303 entries and snippet cache with 0 entries.
+[36m(CrawlWebpageToolServer pid=1404775)[0m [FastAPI] startup
+[36m(WebSearchToolServer pid=1404774)[0m Cache initialized with 2803438 entries.
+[36m(main_task pid=1404579)[0m ✅ WebSearchToolServer started at 10.100.20.18:47145
+[36m(main_task pid=1404579)[0m ✅ CrawlWebpageToolServer started at 10.100.20.18:35367
+[36m(main_task pid=1404579)[0m colocated worker base class <class 'verl.single_controller.base.worker.Worker'>
+[36m(main_task pid=1404579)[0m bind role actor_rollout method chat_completion to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=1404579)[0m bind role actor_rollout method execute_method to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=1404579)[0m bind role actor_rollout method generate to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=1404579)[0m bind role actor_rollout method get_zeromq_address to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=1404579)[0m bind role actor_rollout method sleep to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=1404579)[0m bind role actor_rollout method wake_up to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(WebSearchToolServer pid=1404774)[0m [WebSearchToolServer] FastAPI startup.
+[36m(main_task pid=1404579)[0m ✅ 创建 actor in init_async_rollout_manager: ['WKzF2WWorkerDict_0:0', 'WKzF2W_register_center', 'WKzF2WWorkerDict_0:1', 'crawl_webpage_server', 'web_search_server']
+Error executing job with overrides: ['data.max_prompt_length=16384', 'data.max_response_length=4096', 'data.truncation=error', 'data.custom_cls.path=pkg://verl/utils/dataset/web_research_dataset', 'data.custom_cls.name=WebResearchRLDataset', 'actor_rollout_ref.model.path=hzeng/syn-plan-research-4B', 'actor_rollout_ref.model.use_remove_padding=True', 'actor_rollout_ref.actor.ulysses_sequence_parallel_size=2', 'actor_rollout_ref.actor.fsdp_config.param_offload=False', 'actor_rollout_ref.actor.fsdp_config.optimizer_offload=False', 'actor_rollout_ref.rollout.max_model_len=20000', 'actor_rollout_ref.rollout.log_prob_micro_batch_size_per_gpu=8', 'actor_rollout_ref.rollout.tensor_model_parallel_size=1', 'actor_rollout_ref.rollout.gpu_memory_utilization=0.9', 'actor_rollout_ref.rollout.n=1', 'actor_rollout_ref.eval_output_path=/gypsum/work1/zamani/hzeng/syn-plan-research/eval_outputs/syn_plan_research_4b_pass_at_4_gaia/eval.parquet', 'actor_rollout_ref.ref.log_prob_micro_batch_size_per_gpu=8', 'actor_rollout_ref.ref.fsdp_config.param_offload=True', 'actor_rollout_ref.rollout.max_assistant_turns=16', 'actor_rollout_ref.rollout.prompt_length=32768', 'actor_rollout_ref.rollout.response_length=8192', 'actor_rollout_ref.rollout.mode=async', 'actor_rollout_ref.rollout.multi_turn.completion_callback=tests.workers.rollout.my_test_web_research_completion_callback.Qwen3CustomToolCompletionCallback', 'actor_rollout_ref.rollout.val_kwargs.top_p=0.95', 'actor_rollout_ref.rollout.val_kwargs.top_k=20', 'actor_rollout_ref.rollout.val_kwargs.temperature=0.6', 'actor_rollout_ref.rollout.val_kwargs.do_sample=True', 'trainer.n_gpus_per_node=2', 'trainer.nnodes=1', 'tool_server.web_search_server.api_key=307dc01dc3e9ed75963943ed5104adbe5e93abf7', 'tool_server.web_search_server.cache_file=/gypsum/work1/zamani/hzeng/syn-plan-research/cache/serper_search_cache.jsonl', 'data.val_files=hzeng/syn-plan-research-data-eval', 'validation.pass_at_k=4', 'validation.data_source=web_research_GAIA', 'trainer.total_epochs=1']
+Traceback (most recent call last):
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/trainer/async_main_generation_and_eval.py", line 241, in main
+    run_generation(config)
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/trainer/async_main_generation_and_eval.py", line 253, in run_generation
+    ray.get(main_task.remote(config))
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/ray/_private/client_mode_hook.py", line 104, in wrapper
+    return func(*args, **kwargs)
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/ray/_private/worker.py", line 2967, in get
+    values, debugger_breakpoint = worker.get_objects(
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/ray/_private/worker.py", line 1015, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ImportError): [36mray::main_task()[39m (pid=1404579, ip=10.100.20.18)
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/trainer/async_main_generation_and_eval.py", line 309, in main_task
+    async_rollout_manager = init_async_rollout_manager(config)
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/tests/workers/rollout/async_rollout_utils.py", line 57, in init_async_rollout_manager
+    actor_rollout_wg.init_model()
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/ray/base.py", line 51, in __call__
+    output = ray.get(output)
+ray.exceptions.RayTaskError(ImportError): [36mray::WorkerDict.actor_rollout_init_model()[39m (pid=1405178, ip=10.100.20.18, actor_id=6506e1993f6a3cc56f8bfd9601000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x7591580268c0>)
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/concurrent/futures/_base.py", line 451, in result
+    return self.__get_result()
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+    raise self._exception
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/ray/base.py", line 708, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/base/decorator.py", line 549, in inner
+    return func(*args, **kwargs)
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/fsdp_workers.py", line 561, in init_model
+    from verl.workers.actor import DataParallelPPOActor
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/actor/__init__.py", line 16, in <module>
+    from .dp_actor import DataParallelPPOActor
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/actor/dp_actor.py", line 42, in <module>
+    from flash_attn.bert_padding import index_first_axis, pad_input, rearrange, unpad_input
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/flash_attn/__init__.py", line 3, in <module>
+    from flash_attn.flash_attn_interface import (
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/flash_attn/flash_attn_interface.py", line 15, in <module>
+    import flash_attn_2_cuda as flash_attn_gpu
+ImportError: /work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/flash_attn_2_cuda.cpython-310-x86_64-linux-gnu.so: undefined symbol: _ZN3c105ErrorC2ENS_14SourceLocationENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+[36m(main_task pid=1404579)[0m Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_init_model()[39m (pid=1405329, ip=10.100.20.18, actor_id=3c571c3209adcb2024b8f33501000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x7d3426e37580>)
+[36m(main_task pid=1404579)[0m   File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/concurrent/futures/_base.py", line 458, in result
+[36m(main_task pid=1404579)[0m     return self.__get_result()
+[36m(main_task pid=1404579)[0m   File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/concurrent/futures/_base.py", line 403, in __get_result
+[36m(main_task pid=1404579)[0m     raise self._exception
+[36m(main_task pid=1404579)[0m   File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/ray/base.py", line 708, in func
+[36m(main_task pid=1404579)[0m     return getattr(self.worker_dict[key], name)(*args, **kwargs)
+[36m(main_task pid=1404579)[0m   File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/base/decorator.py", line 549, in inner
+[36m(main_task pid=1404579)[0m     return func(*args, **kwargs)
+[36m(main_task pid=1404579)[0m   File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/fsdp_workers.py", line 561, in init_model
+[36m(main_task pid=1404579)[0m     from verl.workers.actor import DataParallelPPOActor
+[36m(main_task pid=1404579)[0m   File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/actor/__init__.py", line 16, in <module>
+[36m(main_task pid=1404579)[0m     from .dp_actor import DataParallelPPOActor
+[36m(main_task pid=1404579)[0m   File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/actor/dp_actor.py", line 42, in <module>
+[36m(main_task pid=1404579)[0m     from flash_attn.bert_padding import index_first_axis, pad_input, rearrange, unpad_input
+[36m(main_task pid=1404579)[0m   File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/flash_attn/__init__.py", line 3, in <module>
+[36m(main_task pid=1404579)[0m     from flash_attn.flash_attn_interface import (
+[36m(main_task pid=1404579)[0m   File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/flash_attn/flash_attn_interface.py", line 15, in <module>
+[36m(main_task pid=1404579)[0m     import flash_attn_2_cuda as flash_attn_gpu
+[36m(main_task pid=1404579)[0m ImportError: /work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/flash_attn_2_cuda.cpython-310-x86_64-linux-gnu.so: undefined symbol: _ZN3c105ErrorC2ENS_14SourceLocationENSt7__cxx1112basic_stringIcSt11char_traitsIcESaIcEEE
+[36m(CrawlWebpageToolServer pid=1404775)[0m Task was destroyed but it is pending!
+[36m(CrawlWebpageToolServer pid=1404775)[0m task: <Task pending name='Task-3' coro=<CrawlWebpageToolServer._start_server() running at /work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/ray/util/tracing/tracing_helper.py:493> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+[36m(CrawlWebpageToolServer pid=1404775)[0m Task was destroyed but it is pending!
+[36m(CrawlWebpageToolServer pid=1404775)[0m task: <Task pending name='Task-4' coro=<LifespanOn.main() running at /work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/uvicorn/lifespan/on.py:86> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+[36m(CrawlWebpageToolServer pid=1404775)[0m ERROR:    Traceback (most recent call last):
+[36m(CrawlWebpageToolServer pid=1404775)[0m   File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/starlette/routing.py", line 701, in lifespan
+[36m(CrawlWebpageToolServer pid=1404775)[0m     await receive()
+[36m(CrawlWebpageToolServer pid=1404775)[0m GeneratorExit
+[36m(CrawlWebpageToolServer pid=1404775)[0m 
+
+✅ All evaluations completed!

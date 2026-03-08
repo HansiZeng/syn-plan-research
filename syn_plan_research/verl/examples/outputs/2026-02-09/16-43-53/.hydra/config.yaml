@@ -1,0 +1,391 @@
+data:
+  tokenizer: null
+  use_shm: false
+  train_files: ~/data/rlhf/gsm8k/train.parquet
+  val_files: hzeng/syn-plan-research-data-eval
+  prompt_key: prompt
+  reward_fn_key: data_source
+  max_prompt_length: 16384
+  max_response_length: 4096
+  train_batch_size: 1024
+  val_batch_size: null
+  return_raw_input_ids: false
+  return_raw_chat: false
+  return_full_prompt: false
+  shuffle: true
+  dataloader_num_workers: 8
+  validation_shuffle: false
+  filter_overlong_prompts: false
+  filter_overlong_prompts_workers: 1
+  truncation: error
+  image_key: images
+  video_key: videos
+  trust_remote_code: false
+  custom_cls:
+    path: pkg://verl/utils/dataset/web_research_dataset
+    name: WebResearchRLDataset
+  use_web_research: true
+  return_multi_modal_inputs: true
+  sampler:
+    class_path: null
+    class_name: null
+  web_research:
+    prompt_type: original
+actor_rollout_ref:
+  hybrid_engine: true
+  model:
+    path: hzeng/syn-plan-research-4B
+    custom_chat_template: null
+    use_shm: false
+    external_lib: null
+    override_config: {}
+    enable_gradient_checkpointing: true
+    enable_activation_offload: false
+    use_remove_padding: true
+    lora_rank: 0
+    lora_alpha: 16
+    target_modules: all-linear
+    exclude_modules: null
+    use_liger: false
+    use_fused_kernels: false
+    fused_kernel_options:
+      impl_backend: torch
+    trust_remote_code: false
+  actor:
+    strategy: fsdp
+    ppo_mini_batch_size: 256
+    ppo_micro_batch_size: null
+    ppo_micro_batch_size_per_gpu: null
+    use_dynamic_bsz: false
+    ppo_max_token_len_per_gpu: 16384
+    grad_clip: 1.0
+    clip_ratio: 0.2
+    clip_ratio_low: 0.2
+    clip_ratio_high: 0.2
+    policy_loss:
+      loss_mode: vanilla
+      clip_cov_ratio: 0.0002
+      clip_cov_lb: 1.0
+      clip_cov_ub: 5.0
+      kl_cov_ratio: 0.0002
+      ppo_kl_coef: 0.1
+    clip_ratio_c: 3.0
+    loss_agg_mode: token-mean
+    entropy_coeff: 0
+    use_kl_loss: false
+    use_torch_compile: true
+    kl_loss_coef: 0.001
+    kl_loss_type: low_var_kl
+    ppo_epochs: 1
+    shuffle: false
+    ulysses_sequence_parallel_size: 2
+    entropy_from_logits_with_chunking: false
+    entropy_checkpointing: false
+    checkpoint:
+      save_contents:
+      - model
+      - optimizer
+      - extra
+      load_contents: ${actor_rollout_ref.actor.checkpoint.save_contents}
+    optim:
+      lr: 1.0e-06
+      lr_warmup_steps: -1
+      lr_warmup_steps_ratio: 0.0
+      min_lr_ratio: 0.0
+      num_cycles: 0.5
+      warmup_style: constant
+      total_training_steps: -1
+      weight_decay: 0.01
+    fsdp_config:
+      wrap_policy:
+        min_num_params: 0
+      param_offload: false
+      optimizer_offload: false
+      offload_policy: false
+      reshard_after_forward: true
+      fsdp_size: -1
+      forward_prefetch: false
+    profiler:
+      _target_: verl.utils.profiler.ProfilerConfig
+      discrete: false
+      all_ranks: false
+      ranks: []
+  ref:
+    strategy: ${actor_rollout_ref.actor.strategy}
+    fsdp_config:
+      param_offload: true
+      reshard_after_forward: true
+      forward_prefetch: false
+      wrap_policy:
+        min_num_params: 0
+    use_torch_compile: ${actor_rollout_ref.actor.use_torch_compile}
+    log_prob_micro_batch_size: null
+    log_prob_micro_batch_size_per_gpu: 8
+    log_prob_use_dynamic_bsz: ${actor_rollout_ref.actor.use_dynamic_bsz}
+    log_prob_max_token_len_per_gpu: ${actor_rollout_ref.actor.ppo_max_token_len_per_gpu}
+    ulysses_sequence_parallel_size: ${actor_rollout_ref.actor.ulysses_sequence_parallel_size}
+    entropy_from_logits_with_chunking: false
+    entropy_checkpointing: false
+    profiler:
+      _target_: verl.utils.profiler.ProfilerConfig
+      discrete: false
+      all_ranks: false
+      ranks: []
+  rollout:
+    name: vllm
+    mode: async
+    temperature: 1.0
+    top_k: -1
+    top_p: 1
+    filter_unfinished: false
+    prompt_length: 32768
+    response_length: 8192
+    dtype: bfloat16
+    gpu_memory_utilization: 0.9
+    ignore_eos: false
+    enforce_eager: true
+    free_cache_engine: true
+    load_format: dummy_dtensor
+    layered_summon: false
+    tensor_model_parallel_size: 1
+    max_num_batched_tokens: 8192
+    max_model_len: 20000
+    max_num_seqs: 1024
+    log_prob_micro_batch_size: null
+    log_prob_micro_batch_size_per_gpu: 8
+    log_prob_use_dynamic_bsz: ${actor_rollout_ref.actor.use_dynamic_bsz}
+    log_prob_max_token_len_per_gpu: ${actor_rollout_ref.actor.ppo_max_token_len_per_gpu}
+    disable_log_stats: true
+    enable_chunked_prefill: true
+    do_sample: true
+    'n': 1
+    multi_stage_wake_up: false
+    engine_kwargs:
+      vllm:
+        swap_space: null
+        disable_mm_preprocessor_cache: false
+      sglang:
+        attention_backend: null
+    val_kwargs:
+      top_k: 20
+      top_p: 0.95
+      temperature: 0.6
+      'n': 1
+      do_sample: true
+    multi_turn:
+      enable: false
+      max_assistant_turns: 15
+      tool_config_path: null
+      max_user_turns: null
+      max_parallel_calls: 1
+      max_tool_response_length: 256
+      tool_response_truncate_side: middle
+      interaction_config_path: null
+      completion_callback: tests.workers.rollout.my_test_web_research_completion_callback.Qwen3CustomToolCompletionCallback
+      use_inference_chat_template: false
+      tokenization_sanity_check_mode: strict
+      format: hermes
+    calculate_log_probs: false
+    profiler:
+      _target_: verl.utils.profiler.ProfilerConfig
+      discrete: false
+      all_ranks: false
+      ranks: []
+    agent:
+      num_workers: 8
+      custom_async_server:
+        path: null
+        name: null
+    max_assistant_turns: 16
+  eval_output_path: /gypsum/work1/zamani/hzeng/syn-plan-research/eval_outputs/syn_plan_research_4b_pass_at_1_all/eval.parquet
+critic:
+  rollout_n: ${actor_rollout_ref.rollout.n}
+  strategy: ${actor_rollout_ref.actor.strategy}
+  optim:
+    lr: 1.0e-05
+    lr_warmup_steps_ratio: 0.0
+    min_lr_ratio: null
+    warmup_style: constant
+    total_training_steps: -1
+    weight_decay: 0.01
+  model:
+    path: ~/models/deepseek-llm-7b-chat
+    use_shm: false
+    tokenizer_path: ${actor_rollout_ref.model.path}
+    override_config: {}
+    external_lib: ${actor_rollout_ref.model.external_lib}
+    enable_gradient_checkpointing: true
+    enable_activation_offload: false
+    use_remove_padding: false
+    trust_remote_code: ${actor_rollout_ref.model.trust_remote_code}
+    fsdp_config:
+      param_offload: false
+      optimizer_offload: false
+      offload_policy: false
+      reshard_after_forward: true
+      wrap_policy:
+        min_num_params: 0
+      fsdp_size: -1
+      forward_prefetch: false
+    lora_rank: 0
+    lora_alpha: 16
+    target_modules: all-linear
+  ppo_mini_batch_size: ${actor_rollout_ref.actor.ppo_mini_batch_size}
+  ppo_micro_batch_size: null
+  ppo_micro_batch_size_per_gpu: null
+  forward_micro_batch_size: ${critic.ppo_micro_batch_size}
+  forward_micro_batch_size_per_gpu: ${critic.ppo_micro_batch_size_per_gpu}
+  use_dynamic_bsz: ${actor_rollout_ref.actor.use_dynamic_bsz}
+  ppo_max_token_len_per_gpu: 32768
+  forward_max_token_len_per_gpu: ${critic.ppo_max_token_len_per_gpu}
+  ulysses_sequence_parallel_size: 1
+  ppo_epochs: ${actor_rollout_ref.actor.ppo_epochs}
+  shuffle: ${actor_rollout_ref.actor.shuffle}
+  grad_clip: 1.0
+  cliprange_value: 0.5
+  loss_agg_mode: ${actor_rollout_ref.actor.loss_agg_mode}
+  checkpoint:
+    save_contents:
+    - model
+    - optimizer
+    - extra
+    load_contents: ${critic.checkpoint.save_contents}
+  profiler:
+    _target_: verl.utils.profiler.ProfilerConfig
+    discrete: false
+    all_ranks: false
+    ranks: []
+reward_model:
+  enable: false
+  strategy: ${actor_rollout_ref.actor.strategy}
+  model:
+    input_tokenizer: ${actor_rollout_ref.model.path}
+    path: ~/models/FsfairX-LLaMA3-RM-v0.1
+    use_shm: false
+    external_lib: ${actor_rollout_ref.model.external_lib}
+    use_remove_padding: false
+    use_fused_kernels: ${actor_rollout_ref.model.use_fused_kernels}
+    trust_remote_code: false
+    fsdp_config:
+      wrap_policy:
+        min_num_params: 0
+      param_offload: false
+      reshard_after_forward: true
+      fsdp_size: -1
+      forward_prefetch: false
+  micro_batch_size: null
+  micro_batch_size_per_gpu: null
+  max_length: null
+  ulysses_sequence_parallel_size: 1
+  use_dynamic_bsz: ${critic.use_dynamic_bsz}
+  forward_max_token_len_per_gpu: ${critic.forward_max_token_len_per_gpu}
+  reward_manager: naive
+  launch_reward_fn_async: false
+  sandbox_fusion:
+    url: null
+    max_concurrent: 64
+    memory_limit_mb: 1024
+  profiler:
+    _target_: verl.utils.profiler.ProfilerConfig
+    discrete: false
+    all_ranks: false
+    ranks: []
+custom_reward_function:
+  path: null
+  name: compute_score
+algorithm:
+  _target_: verl.trainer.config.AlgoConfig
+  gamma: 1.0
+  lam: 1.0
+  adv_estimator: gae
+  norm_adv_by_std_in_grpo: true
+  use_kl_in_reward: false
+  kl_penalty: kl
+  kl_ctrl:
+    _target_: verl.trainer.config.KLControlConfig
+    type: fixed
+    kl_coef: 0.001
+    horizon: 10000
+    target_kl: 0.1
+  use_pf_ppo: false
+  pf_ppo:
+    _target_: verl.trainer.config.PFPPOConfig
+    reweight_method: pow
+    weight_pow: 2.0
+trainer:
+  balance_batch: true
+  total_epochs: 1
+  total_training_steps: null
+  profile_steps: null
+  controller_nsight_options:
+    trace: cuda,nvtx,cublas,ucx
+    cuda-memory-usage: 'true'
+    cuda-graph-trace: graph
+  worker_nsight_options:
+    trace: cuda,nvtx,cublas,ucx
+    cuda-memory-usage: 'true'
+    cuda-graph-trace: graph
+    capture-range: cudaProfilerApi
+    capture-range-end: null
+    kill: none
+  project_name: verl_examples
+  experiment_name: gsm8k
+  logger:
+  - console
+  - wandb
+  log_val_generations: 0
+  rollout_data_dir: null
+  debug_rollout_data_dir: null
+  debug_rollout_freq: 1
+  validation_data_dir: null
+  nnodes: 1
+  n_gpus_per_node: 2
+  save_freq: -1
+  esi_redundant_time: 0
+  resume_mode: auto
+  resume_from_path: null
+  val_before_train: true
+  val_only: false
+  test_freq: -1
+  critic_warmup: 0
+  default_hdfs_dir: null
+  del_local_ckpt_after_load: false
+  default_local_dir: /workspace/verl_output/checkpoints/${trainer.project_name}/${trainer.experiment_name}
+  max_actor_ckpt_to_keep: null
+  max_critic_ckpt_to_keep: null
+  ray_wait_register_center_timeout: 300
+  device: cuda
+  save_web_search_cache_freq: 10
+  save_web_search_cache_on_validate: true
+  is_multi_node: false
+ray_init:
+  num_cpus: null
+  timeline_json_file: null
+tool_server:
+  web_search_server:
+    url: null
+    parameters: null
+    name: web_search
+    web_result_config:
+      snippet_only: true
+      context_chars: 5000
+      content_extract_method: snippet_f1
+    api_key: 307dc01dc3e9ed75963943ed5104adbe5e93abf7
+    cache_file: /gypsum/work1/zamani/hzeng/syn-plan-research/cache/serper_search_cache.jsonl
+    client_max_concurrency: 8
+  crawl_webpage_server:
+    url: null
+    parameters: null
+    name: crawl_webpage
+    cache_file: /gypsum/work1/zamani/hzeng/syn-plan-research/cache/crawl4ai_url_cache.json
+    semaphore_limit: 8
+    client_max_concurrency: 8
+    server_num: 1
+    per_server_semaphore_limit: 1
+    client_per_endpoint_concurrency: 1
+    client_global_concurrency: 256
+qwen3:
+  enable_thinking: true
+validation:
+  pass_at_k: 1
+  data_source: null

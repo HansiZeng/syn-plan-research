@@ -1,0 +1,29 @@
+class AsyncLLMServerManager
+    worker_group
+    async_llm_servers
+    server_addresses
+    chat_scheduler
+
+    def submit_chat_completions(messages, sampling_parmas)
+
+    def generate_sequences(prompts, **sampling_parmas)
+
+
+class AgentLoopManager
+    woker_group 
+    async_llm_servers 
+    server_addresses 
+    agent_loop_workers 
+
+    def generate_sequences(prompts) 
+
+
+AgentLoopWorker 
+    server_manager 
+
+    def generate_sequences(batch)
+
+
+ActorRolloutRefWorker:
+    
+    def _build_rollout

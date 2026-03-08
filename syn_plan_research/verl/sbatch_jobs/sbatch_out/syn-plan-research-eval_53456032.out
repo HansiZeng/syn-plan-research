@@ -1,0 +1,90 @@
+TRAIN_PATH: /gypsum/work1/zamani/hzeng/syn-plan-research/data/sft/train.parquet
+CKPT_DIR: Qwen/Qwen3-4B
+✅ save_path: /gypsum/work1/zamani/hzeng/syn-plan-research/checkpoints/sft/sft__init_Qwen3-4B_lr_5e-6_ep_5_20260308_191047
+✅ save_freq: 625
+✅ experiment_name: sft__init_Qwen3-4B_lr_5e-6_ep_5_20260308_191047
+W0308 19:10:58.605000 2673927 site-packages/torch/distributed/run.py:792] 
+W0308 19:10:58.605000 2673927 site-packages/torch/distributed/run.py:792] *****************************************
+W0308 19:10:58.605000 2673927 site-packages/torch/distributed/run.py:792] Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+W0308 19:10:58.605000 2673927 site-packages/torch/distributed/run.py:792] *****************************************
+/work/hzeng_umass_edu/ir-research/syn-plan-research/syn_plan_research/verl/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+/work/hzeng_umass_edu/ir-research/syn-plan-research/syn_plan_research/verl/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+/work/hzeng_umass_edu/ir-research/syn-plan-research/syn_plan_research/verl/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+/work/hzeng_umass_edu/ir-research/syn-plan-research/syn_plan_research/verl/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Error executing job with overrides: ['data.train_files=/gypsum/work1/zamani/hzeng/syn-plan-research/data/sft/train.parquet', 'data.val_files=/gypsum/work1/zamani/hzeng/syn-plan-research/data/sft/train.parquet', 'data.multiturn.enable=true', 'data.multiturn.messages_key=messages', 'data.micro_batch_size=4', 'data.train_batch_size=16', 'data.max_length=32768', 'model.partial_pretrain=Qwen/Qwen3-4B', 'trainer.default_local_dir=/gypsum/work1/zamani/hzeng/syn-plan-research/checkpoints/sft/sft__init_Qwen3-4B_lr_5e-6_ep_5_20260308_191047', 'trainer.project_name=multiturn-sft', 'trainer.experiment_name=sft__init_Qwen3-4B_lr_5e-6_ep_5_20260308_191047', 'trainer.logger=[wandb]', 'trainer.total_epochs=5', 'use_remove_padding=true', 'ulysses_sequence_parallel_size=2', 'optim.lr=5e-6', 'trainer.save_freq=625']
+Error executing job with overrides: ['data.train_files=/gypsum/work1/zamani/hzeng/syn-plan-research/data/sft/train.parquet', 'data.val_files=/gypsum/work1/zamani/hzeng/syn-plan-research/data/sft/train.parquet', 'data.multiturn.enable=true', 'data.multiturn.messages_key=messages', 'data.micro_batch_size=4', 'data.train_batch_size=16', 'data.max_length=32768', 'model.partial_pretrain=Qwen/Qwen3-4B', 'trainer.default_local_dir=/gypsum/work1/zamani/hzeng/syn-plan-research/checkpoints/sft/sft__init_Qwen3-4B_lr_5e-6_ep_5_20260308_191047', 'trainer.project_name=multiturn-sft', 'trainer.experiment_name=sft__init_Qwen3-4B_lr_5e-6_ep_5_20260308_191047', 'trainer.logger=[wandb]', 'trainer.total_epochs=5', 'use_remove_padding=true', 'ulysses_sequence_parallel_size=2', 'optim.lr=5e-6', 'trainer.save_freq=625']
+Traceback (most recent call last):
+  File "/work/hzeng_umass_edu/ir-research/syn-plan-research/syn_plan_research/verl/verl/trainer/fsdp_sft_trainer.py", line 663, in main
+    run_sft(config)
+  File "/work/hzeng_umass_edu/ir-research/syn-plan-research/syn_plan_research/verl/verl/trainer/fsdp_sft_trainer.py", line 608, in run_sft
+    local_rank, rank, world_size = initialize_global_process_group()
+  File "/work/hzeng_umass_edu/ir-research/syn-plan-research/syn_plan_research/verl/verl/utils/distributed.py", line 36, in initialize_global_process_group
+    get_torch_device().set_device(local_rank)
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/torch/cuda/__init__.py", line 476, in set_device
+    torch._C._cuda_setDevice(device)
+RuntimeError: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+Traceback (most recent call last):
+  File "/work/hzeng_umass_edu/ir-research/syn-plan-research/syn_plan_research/verl/verl/trainer/fsdp_sft_trainer.py", line 663, in main
+    run_sft(config)
+  File "/work/hzeng_umass_edu/ir-research/syn-plan-research/syn_plan_research/verl/verl/trainer/fsdp_sft_trainer.py", line 608, in run_sft
+    local_rank, rank, world_size = initialize_global_process_group()
+  File "/work/hzeng_umass_edu/ir-research/syn-plan-research/syn_plan_research/verl/verl/utils/distributed.py", line 36, in initialize_global_process_group
+    get_torch_device().set_device(local_rank)
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/torch/cuda/__init__.py", line 476, in set_device
+    torch._C._cuda_setDevice(device)
+RuntimeError: CUDA error: invalid device ordinal
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+[rank2]:[W308 19:11:25.587097002 ProcessGroupNCCL.cpp:1496] Warning: WARNING: destroy_process_group() was not called before program exit, which can leak resources. For more info, please see https://pytorch.org/docs/stable/distributed.html#shutdown (function operator())
+W0308 19:11:26.777000 2673927 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 2674023 closing signal SIGTERM
+W0308 19:11:26.778000 2673927 site-packages/torch/distributed/elastic/multiprocessing/api.py:897] Sending process 2674024 closing signal SIGTERM
+E0308 19:11:27.107000 2673927 site-packages/torch/distributed/elastic/multiprocessing/api.py:869] failed (exitcode: 1) local_rank: 2 (pid: 2674025) of binary: /work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/bin/python3.10
+Traceback (most recent call last):
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/bin/torchrun", line 7, in <module>
+    sys.exit(main())
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 355, in wrapper
+    return f(*args, **kwargs)
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/torch/distributed/run.py", line 918, in main
+    run(args)
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/torch/distributed/run.py", line 909, in run
+    elastic_launch(
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 138, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/site-packages/torch/distributed/launcher/api.py", line 269, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+verl.trainer.fsdp_sft_trainer FAILED
+------------------------------------------------------------
+Failures:
+[1]:
+  time      : 2026-03-08_19:11:26
+  host      : gpu015.unity.rc.umass.edu
+  rank      : 3 (local_rank: 3)
+  exitcode  : 1 (pid: 2674026)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2026-03-08_19:11:26
+  host      : gpu015.unity.rc.umass.edu
+  rank      : 2 (local_rank: 2)
+  exitcode  : 1 (pid: 2674025)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================

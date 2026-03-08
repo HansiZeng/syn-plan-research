@@ -1,0 +1,439 @@
+wandb: Appending key for api.wandb.ai to your netrc file: /home/hzeng_umass_edu/.netrc
+wandb: W&B API key is configured. Use `wandb login --relogin` to force relogin
+
+🚀 Starting evaluation...
+📊 Data source filter: ALL
+📈 Pass@k: 1
+🤖 Model: hzeng/syn-plan-research-4B
+📁 Output: /gypsum/work1/zamani/hzeng/syn-plan-research/eval_outputs/syn_plan_research_4b_pass_at_1_all/eval.parquet
+
+/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+2026-02-04 15:14:19,723	INFO worker.py:2014 -- Started a local Ray instance. View the dashboard at [1m[32mhttp://127.0.0.1:8265 [39m[22m
+/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/ray/_private/worker.py:2062: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+[36m(pid=466484)[0m /work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+[36m(pid=466484)[0m   import pynvml  # type: ignore[import]
+[36m(CrawlWebpageToolServer pid=470237)[0m INFO:     Started server process [470237]
+[36m(CrawlWebpageToolServer pid=470237)[0m INFO:     Waiting for application startup.
+[36m(CrawlWebpageToolServer pid=470237)[0m INFO:     Application startup complete.
+[36m(CrawlWebpageToolServer pid=470237)[0m INFO:     Uvicorn running on http://0.0.0.0:55855 (Press CTRL+C to quit)
+[36m(main_task pid=466484)[0m DeprecationWarning: `ray.state.available_resources_per_node` is a private attribute and access will be removed in a future Ray version.
+[36m(WebSearchToolServer pid=470238)[0m INFO:     Started server process [470238]
+[36m(WebSearchToolServer pid=470238)[0m INFO:     Waiting for application startup.
+[36m(WebSearchToolServer pid=470238)[0m INFO:     Application startup complete.
+[36m(WebSearchToolServer pid=470238)[0m INFO:     Uvicorn running on http://0.0.0.0:36395 (Press CTRL+C to quit)
+[36m(main_task pid=466484)[0m WARNING:2026-02-04 15:16:49,192:Waiting for register center actor 4Du0Ca_register_center to be ready. Elapsed time: 0 seconds out of 300 seconds.
+[36m(pid=472230)[0m /work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+[36m(pid=472230)[0m   import pynvml  # type: ignore[import]
+[36m(pid=472230)[0m Using blocking ray.get inside async actor. This blocks the event loop. Please use `await` on object ref with asyncio.gather if you want to yield execution to the event loop instead.
+[36m(pid=472650)[0m /work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+[36m(pid=472650)[0m   import pynvml  # type: ignore[import]
+[36m(pid=472650)[0m Using blocking ray.get inside async actor. This blocks the event loop. Please use `await` on object ref with asyncio.gather if you want to yield execution to the event loop instead.
+[36m(WorkerDict pid=472230)[0m `torch_dtype` is deprecated! Use `dtype` instead!
+[36m(WorkerDict pid=472650)[0m Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+[36m(main_task pid=466484)[0m ✅ output path:  /gypsum/work1/zamani/hzeng/syn-plan-research/eval_outputs/syn_plan_research_4b_pass_at_1_all/eval.parquet
+[36m(CrawlWebpageToolServer pid=470237)[0m Cache initialized with 312303 entries and snippet cache with 0 entries.
+[36m(CrawlWebpageToolServer pid=470237)[0m [FastAPI] startup
+[36m(WebSearchToolServer pid=470238)[0m Cache initialized with 2803438 entries.
+[36m(main_task pid=466484)[0m ✅ WebSearchToolServer started at 10.100.20.14:36395
+[36m(main_task pid=466484)[0m ✅ CrawlWebpageToolServer started at 10.100.20.14:55855
+[36m(main_task pid=466484)[0m colocated worker base class <class 'verl.single_controller.base.worker.Worker'>
+[36m(main_task pid=466484)[0m bind role actor_rollout method chat_completion to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=466484)[0m bind role actor_rollout method execute_method to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=466484)[0m bind role actor_rollout method generate to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=466484)[0m bind role actor_rollout method get_zeromq_address to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=466484)[0m bind role actor_rollout method sleep to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=466484)[0m bind role actor_rollout method wake_up to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(WebSearchToolServer pid=470238)[0m [WebSearchToolServer] FastAPI startup.
+[36m(main_task pid=466484)[0m ✅ 创建 actor in init_async_rollout_manager: ['4Du0Ca_register_center', '4Du0CaWorkerDict_0:1', 'crawl_webpage_server', 'web_search_server', '4Du0CaWorkerDict_0:0']
+[36m(WorkerDict pid=472230)[0m [Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[36m(WorkerDict pid=472230)[0m Model config after override: Qwen3Config {
+[36m(WorkerDict pid=472230)[0m   "architectures": [
+[36m(WorkerDict pid=472230)[0m     "Qwen3ForCausalLM"
+[36m(WorkerDict pid=472230)[0m   ],
+[36m(WorkerDict pid=472230)[0m   "attention_bias": false,
+[36m(WorkerDict pid=472230)[0m   "attention_dropout": 0.0,
+[36m(WorkerDict pid=472230)[0m   "dtype": "bfloat16",
+[36m(WorkerDict pid=472230)[0m   "eos_token_id": 151645,
+[36m(WorkerDict pid=472230)[0m   "head_dim": 128,
+[36m(WorkerDict pid=472230)[0m   "hidden_act": "silu",
+[36m(WorkerDict pid=472230)[0m   "hidden_size": 2560,
+[36m(WorkerDict pid=472230)[0m   "initializer_range": 0.02,
+[36m(WorkerDict pid=472230)[0m   "intermediate_size": 9728,
+[36m(WorkerDict pid=472230)[0m   "layer_types": [
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention",
+[36m(WorkerDict pid=472230)[0m     "full_attention"
+[36m(WorkerDict pid=472230)[0m   ],
+[36m(WorkerDict pid=472230)[0m   "max_position_embeddings": 40960,
+[36m(WorkerDict pid=472230)[0m   "max_window_layers": 36,
+[36m(WorkerDict pid=472230)[0m   "model_type": "qwen3",
+[36m(WorkerDict pid=472230)[0m   "num_attention_heads": 32,
+[36m(WorkerDict pid=472230)[0m   "num_hidden_layers": 36,
+[36m(WorkerDict pid=472230)[0m   "num_key_value_heads": 8,
+[36m(WorkerDict pid=472230)[0m   "pad_token_id": 151643,
+[36m(WorkerDict pid=472230)[0m   "rms_norm_eps": 1e-06,
+[36m(WorkerDict pid=472230)[0m   "rope_scaling": null,
+[36m(WorkerDict pid=472230)[0m   "rope_theta": 1000000,
+[36m(WorkerDict pid=472230)[0m   "sliding_window": null,
+[36m(WorkerDict pid=472230)[0m   "tie_word_embeddings": true,
+[36m(WorkerDict pid=472230)[0m   "transformers_version": "4.56.1",
+[36m(WorkerDict pid=472230)[0m   "use_cache": true,
+[36m(WorkerDict pid=472230)[0m   "use_sliding_window": false,
+[36m(WorkerDict pid=472230)[0m   "vocab_size": 151936
+[36m(WorkerDict pid=472230)[0m }
+[36m(WorkerDict pid=472230)[0m 
+Error executing job with overrides: ['data.max_prompt_length=16384', 'data.max_response_length=4096', 'data.truncation=error', 'data.custom_cls.path=pkg://verl/utils/dataset/web_research_dataset', 'data.custom_cls.name=WebResearchRLDataset', 'actor_rollout_ref.model.path=hzeng/syn-plan-research-4B', 'actor_rollout_ref.model.use_remove_padding=True', 'actor_rollout_ref.actor.ulysses_sequence_parallel_size=2', 'actor_rollout_ref.actor.fsdp_config.param_offload=False', 'actor_rollout_ref.actor.fsdp_config.optimizer_offload=False', 'actor_rollout_ref.rollout.max_model_len=20000', 'actor_rollout_ref.rollout.log_prob_micro_batch_size_per_gpu=8', 'actor_rollout_ref.rollout.tensor_model_parallel_size=1', 'actor_rollout_ref.rollout.gpu_memory_utilization=0.9', 'actor_rollout_ref.rollout.n=1', 'actor_rollout_ref.eval_output_path=/gypsum/work1/zamani/hzeng/syn-plan-research/eval_outputs/syn_plan_research_4b_pass_at_1_all/eval.parquet', 'actor_rollout_ref.ref.log_prob_micro_batch_size_per_gpu=8', 'actor_rollout_ref.ref.fsdp_config.param_offload=True', 'actor_rollout_ref.rollout.max_assistant_turns=16', 'actor_rollout_ref.rollout.prompt_length=32768', 'actor_rollout_ref.rollout.response_length=8192', 'actor_rollout_ref.rollout.mode=async', 'actor_rollout_ref.rollout.multi_turn.completion_callback=tests.workers.rollout.my_test_web_research_completion_callback.Qwen3CustomToolCompletionCallback', 'actor_rollout_ref.rollout.val_kwargs.top_p=0.95', 'actor_rollout_ref.rollout.val_kwargs.top_k=20', 'actor_rollout_ref.rollout.val_kwargs.temperature=0.6', 'actor_rollout_ref.rollout.val_kwargs.do_sample=True', 'trainer.n_gpus_per_node=2', 'trainer.nnodes=1', 'tool_server.web_search_server.api_key=307dc01dc3e9ed75963943ed5104adbe5e93abf7', 'tool_server.web_search_server.cache_file=/gypsum/work1/zamani/hzeng/syn-plan-research/cache/serper_search_cache.jsonl', 'data.val_files=hzeng/syn-plan-research-data-eval', 'validation.pass_at_k=1', 'trainer.total_epochs=1']
+[36m(CrawlWebpageToolServer pid=470237)[0m Task was destroyed but it is pending!
+[36m(CrawlWebpageToolServer pid=470237)[0m task: <Task pending name='Task-3' coro=<CrawlWebpageToolServer._start_server() running at /work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/ray/util/tracing/tracing_helper.py:493> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+[36m(CrawlWebpageToolServer pid=470237)[0m Task was destroyed but it is pending!
+[36m(CrawlWebpageToolServer pid=470237)[0m task: <Task pending name='Task-4' coro=<LifespanOn.main() running at /work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/uvicorn/lifespan/on.py:86> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+[36m(CrawlWebpageToolServer pid=470237)[0m ERROR:    Traceback (most recent call last):
+[36m(CrawlWebpageToolServer pid=470237)[0m   File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/starlette/routing.py", line 701, in lifespan
+[36m(CrawlWebpageToolServer pid=470237)[0m     await receive()
+[36m(CrawlWebpageToolServer pid=470237)[0m GeneratorExit
+[36m(CrawlWebpageToolServer pid=470237)[0m 
+Traceback (most recent call last):
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/trainer/async_main_generation_and_eval.py", line 241, in main
+    run_generation(config)
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/trainer/async_main_generation_and_eval.py", line 253, in run_generation
+    ray.get(main_task.remote(config))
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/ray/_private/worker.py", line 2972, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/ray/_private/worker.py", line 1031, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(OSError): [36mray::main_task()[39m (pid=466484, ip=10.100.20.14)
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/trainer/async_main_generation_and_eval.py", line 309, in main_task
+    async_rollout_manager = init_async_rollout_manager(config)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/tests/workers/rollout/async_rollout_utils.py", line 57, in init_async_rollout_manager
+    actor_rollout_wg.init_model()
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/ray/base.py", line 51, in __call__
+    output = ray.get(output)
+             ^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^
+                                  ^^^^^^^^^^^^^^^^^^^
+ray.exceptions.RayTaskError(OSError): [36mray::WorkerDict.actor_rollout_init_model()[39m (pid=472230, ip=10.100.20.14, actor_id=5451438f6ea54b52201ed23c01000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x725fe583af90>)
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+           ^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/ray/base.py", line 708, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/base/decorator.py", line 549, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/fsdp_workers.py", line 587, in init_model
+    ) = self._build_model_optimizer(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/fsdp_workers.py", line 282, in _build_model_optimizer
+    actor_module = actor_module_class.from_pretrained(
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/transformers/models/auto/auto_factory.py", line 604, in from_pretrained
+    return model_class.from_pretrained(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/transformers/modeling_utils.py", line 288, in _wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/transformers/modeling_utils.py", line 5027, in from_pretrained
+    checkpoint_files, sharded_metadata = _get_resolved_checkpoint_files(
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/transformers/modeling_utils.py", line 1256, in _get_resolved_checkpoint_files
+    raise OSError(
+OSError: hzeng/syn-plan-research-4B does not appear to have a file named pytorch_model.bin, model.safetensors, tf_model.h5, model.ckpt or flax_model.msgpack.
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+[36m(WorkerDict pid=472650)[0m `torch_dtype` is deprecated! Use `dtype` instead!
+[36m(WorkerDict pid=472650)[0m [Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1[32m [repeated 5x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)[0m
+
+🚀 Starting evaluation...
+📊 Data source filter: web_research_GAIA
+📈 Pass@k: 4
+🤖 Model: hzeng/syn-plan-research-4B
+📁 Output: /gypsum/work1/zamani/hzeng/syn-plan-research/eval_outputs/syn_plan_research_4b_pass_at_4_gaia/eval.parquet
+
+/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+2026-02-04 15:17:33,220	INFO worker.py:2014 -- Started a local Ray instance. View the dashboard at [1m[32mhttp://127.0.0.1:8265 [39m[22m
+/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/ray/_private/worker.py:2062: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
+  warnings.warn(
+[36m(pid=480222)[0m /work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+[36m(pid=480222)[0m   import pynvml  # type: ignore[import]
+[36m(CrawlWebpageToolServer pid=480813)[0m INFO:     Started server process [480813]
+[36m(CrawlWebpageToolServer pid=480813)[0m INFO:     Waiting for application startup.
+[36m(CrawlWebpageToolServer pid=480813)[0m INFO:     Application startup complete.
+[36m(CrawlWebpageToolServer pid=480813)[0m INFO:     Uvicorn running on http://0.0.0.0:49139 (Press CTRL+C to quit)
+[36m(WebSearchToolServer pid=480814)[0m INFO:     Started server process [480814]
+[36m(WebSearchToolServer pid=480814)[0m INFO:     Waiting for application startup.
+[36m(WebSearchToolServer pid=480814)[0m INFO:     Application startup complete.
+[36m(WebSearchToolServer pid=480814)[0m INFO:     Uvicorn running on http://0.0.0.0:38835 (Press CTRL+C to quit)
+[36m(main_task pid=480222)[0m DeprecationWarning: `ray.state.available_resources_per_node` is a private attribute and access will be removed in a future Ray version.
+[36m(main_task pid=480222)[0m WARNING:2026-02-04 15:20:00,738:Waiting for register center actor LZu7L0_register_center to be ready. Elapsed time: 0 seconds out of 300 seconds.
+[36m(pid=485923)[0m /work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+[36m(pid=485923)[0m   import pynvml  # type: ignore[import]
+[36m(pid=485923)[0m Using blocking ray.get inside async actor. This blocks the event loop. Please use `await` on object ref with asyncio.gather if you want to yield execution to the event loop instead.
+[36m(pid=486271)[0m /work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/torch/cuda/__init__.py:63: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+[36m(pid=486271)[0m   import pynvml  # type: ignore[import]
+[36m(pid=486271)[0m Using blocking ray.get inside async actor. This blocks the event loop. Please use `await` on object ref with asyncio.gather if you want to yield execution to the event loop instead.
+[36m(WorkerDict pid=486271)[0m `torch_dtype` is deprecated! Use `dtype` instead!
+[36m(WorkerDict pid=485923)[0m Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+[36m(WorkerDict pid=486271)[0m Fetching 2 files:  50%|█████     | 1/2 [00:25<00:25, 25.63s/it]Fetching 2 files: 100%|██████████| 2/2 [00:25<00:00, 12.82s/it]
+[36m(WorkerDict pid=485923)[0m `torch_dtype` is deprecated! Use `dtype` instead!
+[36m(WorkerDict pid=486271)[0m Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s]
+[36m(WorkerDict pid=485923)[0m Flash Attention 2 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen3ForCausalLM is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", dtype=torch.float16)`
+[36m(WorkerDict pid=485923)[0m Flash Attention 2 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen3Model is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", dtype=torch.float16)`
+[36m(WorkerDict pid=485923)[0m Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+[36m(WorkerDict pid=485923)[0m Loading checkpoint shards:  50%|█████     | 1/2 [00:17<00:17, 17.22s/it]
+[36m(WorkerDict pid=485923)[0m Fetching 2 files:  50%|█████     | 1/2 [00:25<00:25, 25.60s/it]Fetching 2 files: 100%|██████████| 2/2 [00:25<00:00, 12.80s/it]
+[36m(WorkerDict pid=486271)[0m Flash Attention 2 only supports torch.float16 and torch.bfloat16 dtypes, but the current dype in Qwen3Model is torch.float32. You should run training or inference using Automatic Mixed-Precision via the `with torch.autocast(device_type='torch_device'):` decorator, or load the model with the `dtype` argument. Example: `model = AutoModel.from_pretrained("openai/whisper-tiny", attn_implementation="flash_attention_2", dtype=torch.float16)`[32m [repeated 2x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)[0m
+[36m(WorkerDict pid=486271)[0m Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]
+[36m(WorkerDict pid=485923)[0m Loading checkpoint shards: 100%|██████████| 2/2 [00:29<00:00, 14.51s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:29<00:00, 14.91s/it]
+[36m(WorkerDict pid=486271)[0m Loading checkpoint shards:  50%|█████     | 1/2 [00:17<00:17, 17.13s/it]
+[36m(main_task pid=480222)[0m ✅ output path:  /gypsum/work1/zamani/hzeng/syn-plan-research/eval_outputs/syn_plan_research_4b_pass_at_4_gaia/eval.parquet
+[36m(CrawlWebpageToolServer pid=480813)[0m Cache initialized with 312303 entries and snippet cache with 0 entries.
+[36m(CrawlWebpageToolServer pid=480813)[0m [FastAPI] startup
+[36m(main_task pid=480222)[0m ✅ WebSearchToolServer started at 10.100.20.14:38835
+[36m(main_task pid=480222)[0m ✅ CrawlWebpageToolServer started at 10.100.20.14:49139
+[36m(WebSearchToolServer pid=480814)[0m Cache initialized with 2803438 entries.
+[36m(WebSearchToolServer pid=480814)[0m [WebSearchToolServer] FastAPI startup.
+[36m(main_task pid=480222)[0m colocated worker base class <class 'verl.single_controller.base.worker.Worker'>
+[36m(main_task pid=480222)[0m bind role actor_rollout method chat_completion to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=480222)[0m bind role actor_rollout method execute_method to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=480222)[0m bind role actor_rollout method generate to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=480222)[0m bind role actor_rollout method get_zeromq_address to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=480222)[0m bind role actor_rollout method sleep to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=480222)[0m bind role actor_rollout method wake_up to class <class 'verl.single_controller.ray.base.create_colocated_worker_cls.<locals>.WorkerDict'>
+[36m(main_task pid=480222)[0m ✅ 创建 actor in init_async_rollout_manager: ['crawl_webpage_server', 'LZu7L0WorkerDict_0:1', 'LZu7L0_register_center', 'web_search_server', 'LZu7L0WorkerDict_0:0']
+[36m(WorkerDict pid=485923)[0m [Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[36m(WorkerDict pid=485923)[0m [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0
+[36m(WorkerDict pid=485923)[0m [Gloo] Rank 0 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1
+[36m(WorkerDict pid=485923)[0m Model config after override: Qwen3Config {
+[36m(WorkerDict pid=485923)[0m   "architectures": [
+[36m(WorkerDict pid=485923)[0m     "Qwen3ForCausalLM"
+[36m(WorkerDict pid=485923)[0m   ],
+[36m(WorkerDict pid=485923)[0m   "attention_bias": false,
+[36m(WorkerDict pid=485923)[0m   "attention_dropout": 0.0,
+[36m(WorkerDict pid=485923)[0m   "dtype": "bfloat16",
+[36m(WorkerDict pid=485923)[0m   "eos_token_id": 151645,
+[36m(WorkerDict pid=485923)[0m   "head_dim": 128,
+[36m(WorkerDict pid=485923)[0m   "hidden_act": "silu",
+[36m(WorkerDict pid=485923)[0m   "hidden_size": 2560,
+[36m(WorkerDict pid=485923)[0m   "initializer_range": 0.02,
+[36m(WorkerDict pid=485923)[0m   "intermediate_size": 9728,
+[36m(WorkerDict pid=485923)[0m   "layer_types": [
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention",
+[36m(WorkerDict pid=485923)[0m     "full_attention"
+[36m(WorkerDict pid=485923)[0m   ],
+[36m(WorkerDict pid=485923)[0m   "max_position_embeddings": 40960,
+[36m(WorkerDict pid=485923)[0m   "max_window_layers": 36,
+[36m(WorkerDict pid=485923)[0m   "model_type": "qwen3",
+[36m(WorkerDict pid=485923)[0m   "num_attention_heads": 32,
+[36m(WorkerDict pid=485923)[0m   "num_hidden_layers": 36,
+[36m(WorkerDict pid=485923)[0m   "num_key_value_heads": 8,
+[36m(WorkerDict pid=485923)[0m   "pad_token_id": 151643,
+[36m(WorkerDict pid=485923)[0m   "rms_norm_eps": 1e-06,
+[36m(WorkerDict pid=485923)[0m   "rope_scaling": null,
+[36m(WorkerDict pid=485923)[0m   "rope_theta": 1000000,
+[36m(WorkerDict pid=485923)[0m   "sliding_window": null,
+[36m(WorkerDict pid=485923)[0m   "tie_word_embeddings": true,
+[36m(WorkerDict pid=485923)[0m   "transformers_version": "4.56.1",
+[36m(WorkerDict pid=485923)[0m   "use_cache": true,
+[36m(WorkerDict pid=485923)[0m   "use_sliding_window": false,
+[36m(WorkerDict pid=485923)[0m   "vocab_size": 151936
+[36m(WorkerDict pid=485923)[0m }
+[36m(WorkerDict pid=485923)[0m 
+[36m(WorkerDict pid=485923)[0m Monkey patch _flash_attention_forward in transformers.integrations.flash_attention
+[36m(WorkerDict pid=485923)[0m Skipping monkey patch for Qwen3ForCausalLM as use_fused_kernels is False or fused_kernels_backend is torch
+[36m(WorkerDict pid=485923)[0m Qwen3ForCausalLM contains 4.02B parameters
+[36m(WorkerDict pid=485923)[0m wrap_policy: functools.partial(<function _or_policy at 0x7e0297be8540>, policies=[functools.partial(<function transformer_auto_wrap_policy at 0x7e0297be8400>, transformer_layer_cls={<class 'transformers.models.qwen3.modeling_qwen3.Qwen3DecoderLayer'>})])
+[36m(WorkerDict pid=486271)[0m [Gloo] Rank 1 is connected to 1 peer ranks. Expected number of connected peer ranks is : 1[32m [repeated 3x across cluster][0m
+[36m(WorkerDict pid=485923)[0m Total steps: -1, num_warmup_steps: 0
+[36m(WorkerDict pid=485923)[0m Actor use_remove_padding=True
+[36m(WorkerDict pid=485923)[0m Actor use_fused_kernels=False
+[36m(WorkerDict pid=485923)[0m NCCL version 2.27.3+cuda12.9
+[36m(WorkerDict pid=486271)[0m Monkey patch _flash_attention_forward in transformers.integrations.flash_attention
+[36m(WorkerDict pid=486271)[0m Skipping monkey patch for Qwen3ForCausalLM as use_fused_kernels is False or fused_kernels_backend is torch
+[36m(WorkerDict pid=485923)[0m [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0[32m [repeated 2x across cluster][0m
+Error executing job with overrides: ['data.max_prompt_length=16384', 'data.max_response_length=4096', 'data.truncation=error', 'data.custom_cls.path=pkg://verl/utils/dataset/web_research_dataset', 'data.custom_cls.name=WebResearchRLDataset', 'actor_rollout_ref.model.path=hzeng/syn-plan-research-4B', 'actor_rollout_ref.model.use_remove_padding=True', 'actor_rollout_ref.actor.ulysses_sequence_parallel_size=2', 'actor_rollout_ref.actor.fsdp_config.param_offload=False', 'actor_rollout_ref.actor.fsdp_config.optimizer_offload=False', 'actor_rollout_ref.rollout.max_model_len=20000', 'actor_rollout_ref.rollout.log_prob_micro_batch_size_per_gpu=8', 'actor_rollout_ref.rollout.tensor_model_parallel_size=1', 'actor_rollout_ref.rollout.gpu_memory_utilization=0.9', 'actor_rollout_ref.rollout.n=1', 'actor_rollout_ref.eval_output_path=/gypsum/work1/zamani/hzeng/syn-plan-research/eval_outputs/syn_plan_research_4b_pass_at_4_gaia/eval.parquet', 'actor_rollout_ref.ref.log_prob_micro_batch_size_per_gpu=8', 'actor_rollout_ref.ref.fsdp_config.param_offload=True', 'actor_rollout_ref.rollout.max_assistant_turns=16', 'actor_rollout_ref.rollout.prompt_length=32768', 'actor_rollout_ref.rollout.response_length=8192', 'actor_rollout_ref.rollout.mode=async', 'actor_rollout_ref.rollout.multi_turn.completion_callback=tests.workers.rollout.my_test_web_research_completion_callback.Qwen3CustomToolCompletionCallback', 'actor_rollout_ref.rollout.val_kwargs.top_p=0.95', 'actor_rollout_ref.rollout.val_kwargs.top_k=20', 'actor_rollout_ref.rollout.val_kwargs.temperature=0.6', 'actor_rollout_ref.rollout.val_kwargs.do_sample=True', 'trainer.n_gpus_per_node=2', 'trainer.nnodes=1', 'tool_server.web_search_server.api_key=307dc01dc3e9ed75963943ed5104adbe5e93abf7', 'tool_server.web_search_server.cache_file=/gypsum/work1/zamani/hzeng/syn-plan-research/cache/serper_search_cache.jsonl', 'data.val_files=hzeng/syn-plan-research-data-eval', 'validation.pass_at_k=4', 'validation.data_source=web_research_GAIA', 'trainer.total_epochs=1']
+[36m(main_task pid=480222)[0m Unhandled error (suppress with 'RAY_IGNORE_UNHANDLED_ERRORS=1'): [36mray::WorkerDict.actor_rollout_init_model()[39m (pid=486271, ip=10.100.20.14, actor_id=9a98a9a41d1d0c5bea04eb3001000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x7dd7f0e91ca0>)
+[36m(main_task pid=480222)[0m   File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+[36m(main_task pid=480222)[0m     return self.__get_result()
+[36m(main_task pid=480222)[0m            ^^^^^^^^^^^^^^^^^^^
+[36m(main_task pid=480222)[0m   File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+[36m(main_task pid=480222)[0m     raise self._exception
+[36m(main_task pid=480222)[0m            ^^^^^^^^^^^^^^^^^^^^^
+[36m(main_task pid=480222)[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36m(main_task pid=480222)[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36m(main_task pid=480222)[0m   File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/ray/base.py", line 708, in func
+[36m(main_task pid=480222)[0m     return getattr(self.worker_dict[key], name)(*args, **kwargs)
+[36m(main_task pid=480222)[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36m(main_task pid=480222)[0m   File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/base/decorator.py", line 549, in inner
+[36m(main_task pid=480222)[0m     return func(*args, **kwargs)
+[36m(main_task pid=480222)[0m            ^^^^^^^^^^^^^^^^^^^^^
+[36m(main_task pid=480222)[0m   File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/fsdp_workers.py", line 623, in init_model
+[36m(main_task pid=480222)[0m     self.rollout, self.rollout_sharding_manager = self._build_rollout(
+[36m(main_task pid=480222)[0m                                                   ^^^^^^^^^^^^^^^^^^^^
+[36m(main_task pid=480222)[0m   File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/fsdp_workers.py", line 1640, in _build_rollout
+[36m(main_task pid=480222)[0m     rollout, rollout_sharding_manager = super()._build_rollout(trust_remote_code)
+[36m(main_task pid=480222)[0m                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36m(main_task pid=480222)[0m   File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/fsdp_workers.py", line 478, in _build_rollout
+[36m(main_task pid=480222)[0m     from verl.workers.rollout.vllm_rollout import vLLMRollout
+[36m(main_task pid=480222)[0m   File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/rollout/vllm_rollout/__init__.py", line 17, in <module>
+[36m(main_task pid=480222)[0m     from .vllm_rollout_spmd import vLLMAsyncRollout, vLLMRollout  # noqa: F401
+[36m(main_task pid=480222)[0m     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+[36m(main_task pid=480222)[0m   File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/rollout/vllm_rollout/vllm_rollout_spmd.py", line 50, in <module>
+[36m(main_task pid=480222)[0m     from vllm.model_executor.sampling_metadata import SamplingMetadata
+[36m(main_task pid=480222)[0m ModuleNotFoundError: No module named 'vllm.model_executor.sampling_metadata'
+[36m(WorkerDict pid=486271)[0m Loading checkpoint shards: 100%|██████████| 2/2 [00:29<00:00, 14.51s/it]Loading checkpoint shards: 100%|██████████| 2/2 [00:29<00:00, 14.90s/it]
+[36m(CrawlWebpageToolServer pid=480813)[0m Task was destroyed but it is pending!
+[36m(CrawlWebpageToolServer pid=480813)[0m task: <Task pending name='Task-3' coro=<CrawlWebpageToolServer._start_server() running at /work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/ray/util/tracing/tracing_helper.py:493> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+[36m(CrawlWebpageToolServer pid=480813)[0m Task was destroyed but it is pending!
+[36m(CrawlWebpageToolServer pid=480813)[0m task: <Task pending name='Task-4' coro=<LifespanOn.main() running at /work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/uvicorn/lifespan/on.py:86> wait_for=<Future pending cb=[Task.task_wakeup()]>>
+[36m(CrawlWebpageToolServer pid=480813)[0m ERROR:    Traceback (most recent call last):
+[36m(CrawlWebpageToolServer pid=480813)[0m   File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/starlette/routing.py", line 701, in lifespan
+[36m(CrawlWebpageToolServer pid=480813)[0m     await receive()
+[36m(CrawlWebpageToolServer pid=480813)[0m GeneratorExit
+[36m(CrawlWebpageToolServer pid=480813)[0m 
+Traceback (most recent call last):
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/trainer/async_main_generation_and_eval.py", line 241, in main
+    run_generation(config)
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/trainer/async_main_generation_and_eval.py", line 253, in run_generation
+    ray.get(main_task.remote(config))
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
+    return fn(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/ray/_private/client_mode_hook.py", line 104, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/ray/_private/worker.py", line 2972, in get
+    values, debugger_breakpoint = worker.get_objects(
+                                  ^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/site-packages/ray/_private/worker.py", line 1031, in get_objects
+    raise value.as_instanceof_cause()
+ray.exceptions.RayTaskError(ModuleNotFoundError): [36mray::main_task()[39m (pid=480222, ip=10.100.20.14)
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/trainer/async_main_generation_and_eval.py", line 309, in main_task
+    async_rollout_manager = init_async_rollout_manager(config)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/tests/workers/rollout/async_rollout_utils.py", line 57, in init_async_rollout_manager
+    actor_rollout_wg.init_model()
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/ray/base.py", line 51, in __call__
+    output = ray.get(output)
+             ^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^
+                                  ^^^^^^^^^^^^^^^^^^^
+ray.exceptions.RayTaskError(ModuleNotFoundError): [36mray::WorkerDict.actor_rollout_init_model()[39m (pid=485923, ip=10.100.20.14, actor_id=6db82a972525e7cead16839201000000, repr=<verl.single_controller.ray.base.WorkerDict object at 0x7e0267261850>)
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/concurrent/futures/_base.py", line 449, in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-cu128/lib/python3.12/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+           ^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/ray/base.py", line 708, in func
+    return getattr(self.worker_dict[key], name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/single_controller/base/decorator.py", line 549, in inner
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/fsdp_workers.py", line 623, in init_model
+    self.rollout, self.rollout_sharding_manager = self._build_rollout(
+                                                  ^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/fsdp_workers.py", line 1640, in _build_rollout
+    rollout, rollout_sharding_manager = super()._build_rollout(trust_remote_code)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/fsdp_workers.py", line 478, in _build_rollout
+    from verl.workers.rollout.vllm_rollout import vLLMRollout
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/rollout/vllm_rollout/__init__.py", line 17, in <module>
+    from .vllm_rollout_spmd import vLLMAsyncRollout, vLLMRollout  # noqa: F401
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/workers/rollout/vllm_rollout/vllm_rollout_spmd.py", line 50, in <module>
+    from vllm.model_executor.sampling_metadata import SamplingMetadata
+ModuleNotFoundError: No module named 'vllm.model_executor.sampling_metadata'
+
+Set the environment variable HYDRA_FULL_ERROR=1 for a complete stack trace.
+[36m(WorkerDict pid=486271)[0m [Gloo] Rank 0 is connected to 0 peer ranks. Expected number of connected peer ranks is : 0[32m [repeated 2x across cluster][0m
+
+✅ All evaluations completed!

@@ -1,0 +1,34 @@
+working_dir: ./
+excludes:
+  - "wandb/**"
+  - "verl_output/**"
+  - "data/**"
+  - "sft_outputs/**"
+  - "cache/**"
+  - "__pycache__/**"
+  - "**/*.log"
+  - "**/*.wandb"
+  - ".git/**"
+  - ".aws/**"
+
+env_vars:
+  # 你已有
+  TORCH_NCCL_AVOID_RECORD_STREAMS: "1"
+  RAY_OVERRIDE_JOB_RUNTIME_ENV: "1"
+  # 为了多机稳定（Socket/TCP 路径）
+  
+  NCCL_NET: "Socket"
+  NCCL_IB_DISABLE: "1"
+  NCCL_SOCKET_FAMILY: "AF_INET"
+  NCCL_SOCKET_IFNAME: "eth0"     # 按你的私网网卡改：eth0/ens5/ens3...
+  NCCL_PORT_RANGE: "16000-16100"
+  NCCL_DEBUG: "INFO"
+  NCCL_ASYNC_ERROR_HANDLING: "1"
+  NCCL_BLOCKING_WAIT: "1"
+  NCCL_NSOCKS_PER_THREAD: "4"
+  NCCL_SOCKET_NTHREADS: "2"
+  VLLM_USE_V1: "1"
+  TOKENIZERS_PARALLELISM: "true"
+  VLLM_LOGGING_LEVEL: "WARN"
+
+

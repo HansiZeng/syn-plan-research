@@ -1,0 +1,133 @@
+# Copyright 2024 Bytedance Ltd. and/or its affiliates
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+from collections import defaultdict
+import re
+import torch
+
+from verl import DataProto
+from verl.utils.reward_score import default_compute_score
+from verl.workers.reward_manager import register
+
+
+def extract_solution(solution_str):
+    """Extract the equation from the solution string."""
+    # Remove everything before the first "Assistant:"
+    # if "Assistant:" in solution_str:
+    #     solution_str = solution_str.split("Assistant:", 1)[1]
+    # elif "<|im_start|>assistant" in solution_str:
+    #     solution_str = solution_str.split("<|im_start|>assistant", 1)[1]
+    # else:
+    #     return None
+    # solution_str = solution_str.split('\n')[-1]
+
+    answer_pattern = r"<answer>(.*?)</answer>"
+    match = re.finditer(answer_pattern, solution_str, re.DOTALL)
+    matches = list(match)
+
+    # If there are 0  matches, return None
+    if len(matches) < 1:
+        return None
+
+    # If there are 2 or more matches, return the last one
+    return matches[-1].group(1).strip()
+
+@register("eval_naive")
+class LLMJudgeEvalNaiveRewardManager:
+    """The reward manager."""
+
+    def __init__(self, tokenizer, num_examine, compute_score=None, reward_fn_key="data_source") -> None:
+        """
+        Initialize the NaiveRewardManager instance.
+
+        Args:
+            tokenizer: The tokenizer used to decode token IDs into text.
+            num_examine: The number of batches of decoded responses to print to the console for debugging purpose.
+            compute_score: A function to compute the reward score. If None, `default_compute_score` will be used.
+            reward_fn_key: The key used to access the data source in the non-tensor batch data. Defaults to
+                "data_source".
+        """
+        self.tokenizer = tokenizer  # Store the tokenizer for decoding token IDs
+        self.num_examine = num_examine  # the number of batches of decoded responses to print to the console
+        self.compute_score = compute_score or default_compute_score
+        self.reward_fn_key = reward_fn_key  # Store the key for accessing the data source
+        print("Successfully initialized EvalNaiveRewardManager")
+
+    def __call__(self, data: DataProto, return_dict=True):
+        """We will expand this function gradually based on the available datasets"""
+
+        # If there is rm score, we directly return rm score. Otherwise, we compute via rm_score_fn
+        if "rm_scores" in data.batch.keys():
+            if return_dict:
+                return {"reward_tensor": data.batch["rm_scores"]}
+            else:
+                return data.batch["rm_scores"]
+
+        # reward_tensor = torch.zeros_like(data.batch["responses"], dtype=torch.float32)
+        reward_extra_info = defaultdict(list)
+        rewards = []
+        responses = []
+
+        for i in range(len(data)):
+            data_item = data[i]  # DataProtoItem
+
+            prompt_ids = data_item.batch["prompts"]
+
+            prompt_length = prompt_ids.shape[-1]
+
+            valid_prompt_length = data_item.batch["attention_mask"][:prompt_length].sum()
+            valid_prompt_ids = prompt_ids[-valid_prompt_length:]
+
+            response_ids = data_item.batch["responses"]
+            valid_response_length = data_item.batch["attention_mask"][prompt_length:].sum()
+            valid_response_ids = response_ids[:valid_response_length]
+
+            # decode
+            prompt_str = self.tokenizer.decode(valid_prompt_ids, skip_special_tokens=True)
+            response_str = self.tokenizer.decode(valid_response_ids, skip_special_tokens=True)
+
+            ground_truth = data_item.non_tensor_batch["reward_model"]["ground_truth"]
+            data_source = data_item.non_tensor_batch[self.reward_fn_key]
+            extra_info = data_item.non_tensor_batch.get("extra_info", {})
+            # num_turns = data_item.non_tensor_batch.get("__num_turns__", None)
+
+            for key, val in data_item.non_tensor_batch.items(): 
+                if "__num" in key and "turns__" in key:
+                    extra_info[key] = val
+
+            score = self.compute_score(
+                data_source=data_source,
+                solution_str=response_str,
+                ground_truth=ground_truth,
+                extra_info=extra_info,
+            )
+
+            if isinstance(score, dict):
+                reward = score["score"]
+                # Store the information including original reward
+                for key, value in score.items():
+                    if key == "score":
+                        continue
+                    reward_extra_info[key].append(value)
+            else:
+                reward = score
+
+            rewards.append(score["score"])
+            responses.append(response_str)
+
+        return {
+                "reward": rewards,
+                "reward_extra_info": reward_extra_info,
+                "responses": responses,
+            }

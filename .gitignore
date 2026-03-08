@@ -1,0 +1,37 @@
+# Environment secrets
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+*.egg
+
+# Caches
+cache/
+*.cache
+
+# Checkpoints (too large for git)
+checkpoints/
+
+# OS files
+.DS_Store
+__MACOSX/
+Thumbs.db
+
+# Internal notes / legacy code (not for release)
+legacy/
+mds/
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+sbatch_jobs/sbatch_out/
+
+# Wandb
+**/wandb/

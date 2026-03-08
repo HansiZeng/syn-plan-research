@@ -1,0 +1,1 @@
+ERROR: /var/.env not found. Run: cp .env.example .env and fill in your paths + API key.

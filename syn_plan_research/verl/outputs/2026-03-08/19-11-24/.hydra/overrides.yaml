@@ -1,0 +1,17 @@
+- data.train_files=/gypsum/work1/zamani/hzeng/syn-plan-research/data/sft/train.parquet
+- data.val_files=/gypsum/work1/zamani/hzeng/syn-plan-research/data/sft/train.parquet
+- data.multiturn.enable=true
+- data.multiturn.messages_key=messages
+- data.micro_batch_size=4
+- data.train_batch_size=16
+- data.max_length=32768
+- model.partial_pretrain=Qwen/Qwen3-4B
+- trainer.default_local_dir=/gypsum/work1/zamani/hzeng/syn-plan-research/checkpoints/sft/sft__init_Qwen3-4B_lr_5e-6_ep_5_20260308_191047
+- trainer.project_name=multiturn-sft
+- trainer.experiment_name=sft__init_Qwen3-4B_lr_5e-6_ep_5_20260308_191047
+- trainer.logger=[wandb]
+- trainer.total_epochs=5
+- use_remove_padding=true
+- ulysses_sequence_parallel_size=2
+- optim.lr=5e-6
+- trainer.save_freq=625

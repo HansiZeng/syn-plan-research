@@ -1,0 +1,43 @@
+wandb: [wandb.login()] Using explicit session credentials for https://api.wandb.ai.
+wandb: Appending key for api.wandb.ai to your netrc file: /home/hzeng_umass_edu/.netrc
+wandb: W&B API key is configured. Use `wandb login --relogin` to force relogin
+
+🚀 Starting evaluation...
+📊 Data source filter: ALL
+📈 Pass@k: 1
+🤖 Model: hzeng/syn-plan-research-4B
+📁 Output: /gypsum/work1/zamani/hzeng/syn-plan-research/eval_outputs/syn_plan_research_4b_pass_at_1_all/eval.parquet
+
+/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Traceback (most recent call last):
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/runpy.py", line 187, in _run_module_as_main
+    mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/runpy.py", line 110, in _get_module_details
+    __import__(pkg_name)
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/__init__.py", line 22, in <module>
+    from .protocol import DataProto
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/protocol.py", line 30, in <module>
+    import tensordict
+ModuleNotFoundError: No module named 'tensordict'
+
+🚀 Starting evaluation...
+📊 Data source filter: web_research_GAIA
+📈 Pass@k: 4
+🤖 Model: hzeng/syn-plan-research-4B
+📁 Output: /gypsum/work1/zamani/hzeng/syn-plan-research/eval_outputs/syn_plan_research_4b_pass_at_4_gaia/eval.parquet
+
+/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/__init__.py:18: UserWarning: pkg_resources is deprecated as an API. See https://setuptools.pypa.io/en/latest/pkg_resources.html. The pkg_resources package is slated for removal as early as 2025-11-30. Refrain from using this package or pin to Setuptools<81.
+  import pkg_resources
+Traceback (most recent call last):
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/runpy.py", line 187, in _run_module_as_main
+    mod_name, mod_spec, code = _get_module_details(mod_name, _Error)
+  File "/work/hzeng_umass_edu/miniconda3/envs/verl-vllm083/lib/python3.10/runpy.py", line 110, in _get_module_details
+    __import__(pkg_name)
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/__init__.py", line 22, in <module>
+    from .protocol import DataProto
+  File "/work/hzeng_umass_edu/ir-research/SynPlanResearch/scripts/web_research/latest_verl/verl/protocol.py", line 30, in <module>
+    import tensordict
+ModuleNotFoundError: No module named 'tensordict'
+
+✅ All evaluations completed!

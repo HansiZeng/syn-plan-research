@@ -1,0 +1,24 @@
+Scheduler:
+generate_sequences: 
+    messages = self._submit_chat_completion_smaphore 
+
+_submit_chat_completion_smaphore:
+    sellf.submit_chat_completions(messages, request_id, info)
+
+submit_chat_completions:
+    task = self._submit_chat_completions_and_callback(messags, request_id, info)
+    background_tasks.add(task)
+    task.add_done_callback(self.background_tasks.discard)
+
+_submit_chat_completions_and_callback:
+    completions = self._chat_completions_aiohttp() # call vllm ChatGPT server 
+    completion_callback(messages, completions, info)
+
+
+
+Completion_Callback:
+    __call__(messages, completions, info):
+        messages.add(completions) # based on some logic in tool use
+        self.scheduler.submit_chat_completions(messages, request_id=completions.id, info=info)
+
+

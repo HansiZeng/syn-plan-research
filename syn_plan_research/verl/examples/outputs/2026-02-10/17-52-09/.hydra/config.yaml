@@ -1,0 +1,88 @@
+optim:
+  _target_: verl.workers.config.FSDPOptimizerConfig
+  optimizer: AdamW
+  optimizer_impl: torch.optim
+  lr: 5.0e-06
+  lr_warmup_steps_ratio: 0.1
+  total_training_steps: -1
+  weight_decay: 0.01
+  lr_warmup_steps: -1
+  betas:
+  - 0.9
+  - 0.95
+  clip_grad: 1.0
+  min_lr_ratio: 0.0
+  num_cycles: 0.5
+  lr_scheduler_type: constant
+  warmup_style: null
+  override_optimizer_config: null
+  lr_scheduler: cosine
+data:
+  train_batch_size: 16
+  micro_batch_size: 4
+  micro_batch_size_per_gpu: 4
+  train_files: /gypsum/work1/zamani/hzeng/syn-plan-research/data/sft/train.parquet
+  val_files: /gypsum/work1/zamani/hzeng/syn-plan-research/data/sft/train.parquet
+  train_max_samples: -1
+  val_max_samples: -1
+  prompt_key: question
+  response_key: answer
+  prompt_dict_keys: null
+  response_dict_keys: null
+  multiturn:
+    enable: true
+    messages_key: messages
+    tools_key: tools
+    enable_thinking_key: enable_thinking
+  max_length: 32768
+  truncation: error
+  balance_dp_token: false
+  chat_template: null
+  custom_cls:
+    path: null
+    name: null
+  use_shm: false
+  apply_chat_template_kwargs: {}
+model:
+  partial_pretrain: Qwen/Qwen3-4B
+  use_shm: false
+  fsdp_config:
+    model_dtype: fp32
+    wrap_policy:
+      min_num_params: 0
+    cpu_offload: false
+    offload_params: false
+  external_lib: null
+  enable_gradient_checkpointing: true
+  trust_remote_code: false
+  lora_rank: 0
+  lora_alpha: 16
+  target_modules: all-linear
+  use_liger: false
+  strategy: fsdp2
+ulysses_sequence_parallel_size: 2
+use_remove_padding: true
+trainer:
+  default_local_dir: /gypsum/work1/zamani/hzeng/syn-plan-research/checkpoints/sft/sft__init_Qwen3-4B_lr_5e-6_ep_5_20260210_175154
+  default_hdfs_dir: null
+  project_name: multiturn-sft
+  experiment_name: sft__init_Qwen3-4B_lr_5e-6_ep_5_20260210_175154
+  total_epochs: 5
+  total_training_steps: null
+  logger:
+  - wandb
+  seed: 1
+  save_freq: 625
+  test_freq: -1
+  nnodes: 1
+  n_gpus_per_node: 8
+  max_ckpt_to_keep: null
+  resume_mode: auto
+  resume_from_path: null
+  checkpoint:
+    save_contents:
+    - model
+    - optimizer
+    - extra
+    load_contents: ${trainer.checkpoint.save_contents}
+  device: cuda

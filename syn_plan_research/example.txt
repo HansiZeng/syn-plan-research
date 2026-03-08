@@ -1,0 +1,46 @@
+messages = [ {role: user, content: xxx} , 
+  {role: assistant, content: yyy},
+  {role: tool, content: zzz},
+  {role: assistant, content: yyy},
+  {role: tool, content: zzz},
+  {role: assistant, content: ans}]
+
+apply_chat_template(messages) --> str 
+
+sample = """
+user\n
+xxx 
+
+assistant\n
+yyy
+
+tool\n
+zzz
+
+assistant\n
+yyy
+
+tool\n
+zzz
+
+assistant\n
+ans
+"""
+
+
+input_ids = [ ]
+reponse_mask = []
+
+Asssitant\n
+<think>
+werwerwerwe
+</tink>
+<tool>
+
+
+
+Asssitant\n
+<think>
+
+</think>
+<tool_call>
