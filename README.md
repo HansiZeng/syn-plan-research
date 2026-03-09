@@ -1,6 +1,16 @@
 # Syn-Plan-Research
 
-Multi-turn web research with reinforcement learning. This repository contains code for SFT, RL training, and evaluation of language models that learn to search the web and synthesize answers.
+The official repo for: **SynPlanResearch-R1: Encouraging Tool Exploration for Deep Research with Synthetic Plans.**
+
+This repo provides everything needed to reproduce our results:
+- **Section 1** — Environment setup (conda + pip)
+- **Section 2** — Configuration (`.env` for paths and API keys)
+- **Section 3** — Data download (from HuggingFace or local parquet)
+- **Section 4** — Evaluation, SFT training, and RL training scripts
+
+<p align="center">
+  <img src="images/syn-plan-research-r1.png" width="100%" />
+</p>
 
 ## Models & Datasets on HuggingFace
 
