@@ -8,7 +8,6 @@
 #SBATCH --mem=256G
 #SBATCH --time=7-00:00:00
 
-source /work/hzeng_umass_edu/miniconda3/etc/profile.d/conda.sh
 conda activate verl-vllm083
 
 export CUDA_VISIBLE_DEVICES=0,1,2,3

@@ -6,13 +6,13 @@ Multi-turn web research with reinforcement learning. This repository contains co
 
 | Type | Name |
 |------|------|
-| Model | `hzeng/syn-plan-research-4B` |
-| Model | `hzeng/syn-plan-research-4B-sft` |
-| Model | `hzeng/syn-plan-research-8B` |
-| Model | `hzeng/syn-plan-research-8B-sft` |
-| Dataset | `hzeng/syn-plan-research-data-eval` |
-| Dataset | `hzeng/syn-plan-research-data-sft` |
-| Dataset | `hzeng/syn-plan-research-data-rl` |
+| Model | [`hzeng/syn-plan-research-4B`](https://huggingface.co/hzeng/syn-plan-research-4B) |
+| Model | [`hzeng/syn-plan-research-4B-sft`](https://huggingface.co/hzeng/syn-plan-research-4B-sft) |
+| Model | [`hzeng/syn-plan-research-8B`](https://huggingface.co/hzeng/syn-plan-research-8B) |
+| Model | [`hzeng/syn-plan-research-8B-sft`](https://huggingface.co/hzeng/syn-plan-research-8B-sft) |
+| Dataset | [`hzeng/syn-plan-research-data-eval`](https://huggingface.co/datasets/hzeng/syn-plan-research-data-eval) |
+| Dataset | [`hzeng/syn-plan-research-data-sft`](https://huggingface.co/datasets/hzeng/syn-plan-research-data-sft) |
+| Dataset | [`hzeng/syn-plan-research-data-rl`](https://huggingface.co/datasets/hzeng/syn-plan-research-data-rl) |
 
 ---
 
